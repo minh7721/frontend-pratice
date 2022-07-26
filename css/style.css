@@ -3,7 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: Montserrat;
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 
 @font-face {
@@ -51,10 +51,27 @@
   justify-content: center;
   align-items: center;
   padding: 6px 24px;
-  gap: 10px; 
-  
+  gap: 10px;
 }
 
 .profile-avatar__img {
   width: 36px;
 }
+
+/* Start Slider */
+#slider {
+
+}
+.slider {
+  width: 100%;
+  height: 390px;
+  background-image: url('../img/slider1.png');
+}
+
+/* End Slider */
+
+/* Start Content */
+
+
+
+/* End content */

@@ -6,51 +6,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Review Nhà</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <div class="container">
-        <!-- Start Header -->
+      <!-- Start Header -->
       <div id="header" class="grid grid-cols-3 gap-4 content-center leading-4">
         <div class="header__left color__text flex">
-            <div class="font__text text-sm opacity-50 ml-12">Mua nhà</div>
-            <div class="font__text text-sm opacity-50 ml-12">Thuê nhà</div>
-            <div class="font__text text-sm opacity-50 ml-12">Khám phá</div>
-            <div class="font__text text-sm ml-12 shrink underline decoration-1 underline-offset-8">Blog</div>
+          <div class="font__text text-sm opacity-50 ml-12">Mua nhà</div>
+          <div class="font__text text-sm opacity-50 ml-12">Thuê nhà</div>
+          <div class="font__text text-sm opacity-50 ml-12">Khám phá</div>
+          <div
+            class="font__text text-sm ml-12 shrink underline decoration-1 underline-offset-8"
+          >
+            Blog
+          </div>
         </div>
         <div class="text-center color__text font__text">*Reviewnhà</div>
         <div class="header__right flex">
-            <div class="icon-heart"><i class="fa-solid fa-heart-circle-check"></i></div>
-            <button class="btn__dangBai mr-6 ml-6 text-sm font-semibold pt-2 pb-2 pl-6 pr-6 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">Đăng bài</button>
-            <div class="profile flex">
-                <div class="profile-name">
-                    <div class="profile-name__name">
-                        Quang Anh Tran
-                    </div>
-                    <div class="profile-name__job opacity-50 text-xs float-right font-normal">
-                        Tư vấn
-                    </div>
-                </div>
-                <div class="profile-avatar pl-2.5">
-                    <img src="./img/avatar.jpg" alt="" class="rounded-full profile-avatar__img">
-                </div>
+          <div class="icon-heart">
+            <i class="fa-solid fa-heart-circle-check"></i>
+          </div>
+          <button
+            class="btn__dangBai mr-6 ml-6 text-sm font-semibold pt-2 pb-2 pl-6 pr-6 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full"
+          >
+            Đăng bài
+          </button>
+          <div class="profile flex">
+            <div class="profile-name">
+              <div class="profile-name__name">Hoang Nhat Minh</div>
+              <div
+                class="profile-name__job opacity-50 text-xs float-right font-normal"
+              >
+                Tư vấn
+              </div>
             </div>
+            <div class="profile-avatar pl-2.5">
+              <img
+                src="./img/avatar.jpg"
+                alt=""
+                class="rounded-full profile-avatar__img"
+              />
+            </div>
+          </div>
         </div>
       </div>
-<!-- End Header -->
+      <!-- End Header -->
 
-<!-- Start Slider -->
-      <div id="slider"></div>
-<!-- End Slider -->
+      <!-- Start Slider -->
+      <div id="slider" class="flex justify-center">
+        <div class="w-9/12">
+          <div class="bg-contain bg-no-repeat bg-center rounded-3xl slider">
+            <div
+              class="text-white grid content-center"
+              style="height: 100%; margin-left: 124px"
+            >
+              <p class="text-5xl">Reviewnhà</p>
+              <p class="">Finding your best home</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Slider -->
 
-<!-- Start Content -->
-      <div id="content"></div>
-<!-- End Content -->
+      <!-- Start Content -->
+      <div id="content" class="mt-9 grid justify-items-center">
+        <div class="w-6/12">
+          <div class="flex justify-between">
+            <a style="background-color: #007882; border-radius: 36px;" class="font-normal text-white py-1.5 px-9" href="#">Tất cả</a>
+            <a class="font-normal" href="#">Xã hội</a>
+            <a class="font-normal" href="#">Nhà đất</a>
+            <a class="font-normal" href="#">Đời sống</a>
+            <a class="font-normal" href="#">Video</a>
+          </div>
+        </div>
 
-<!-- Start Footer -->
+        <div class="flex items-center mt-11">
+          <i class="fa-solid fa-square-rss" style="font-size: 40px; margin-right: 30px; color: #007882;"></i>
+          <p>Tin tức</p>
+        </div>
+      </div>
+      <!-- End Content -->
+
+      <!-- Start Footer -->
       <div id="footer"></div>
- <!--End Footer  -->
+      <!--End Footer  -->
     </div>
 
     <script src="./js/index.js"></script>
