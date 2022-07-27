@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Review Nhà</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
     integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 
@@ -49,112 +49,32 @@
     </div>
     <!-- End Header -->
 
-    <!-- Start Slider -->
-    <div id="slider" class="flex justify-center">
-      <div class="w-9/12">
-        <div class="bg-contain bg-no-repeat bg-center rounded-3xl slider">
-          <div class="text-white grid content-center" style="height: 100%; margin-left: 124px">
-            <p class="text-5xl">Reviewnhà</p>
-            <p class="">Finding your best home</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Slider -->
 
     <!-- Start Content -->
     <div id="content" class="mt-9 flex justify-center">
       <div class="w-7/12">
-        <div class="flex justify-between">
-          <a style="border-radius: 36px" class="bg-xanhLaDam font-normal text-white py-1.5 px-9"
-            href="#">Tất cả</a>
-          <a class="font-normal py-1.5" href="./xahoi.html">Xã hội</a>
-          <a class="font-normal py-1.5" href="#">Nhà đất</a>
-          <a class="font-normal py-1.5" href="#">Đời sống</a>
-          <a class="font-normal py-1.5" href="#">Video</a>
-        </div>
-
-        <div class="flex justify-center mt-11">
-          <i class="fa-solid fa-square-rss text-xanhLaDam" style="font-size: 40px; margin-right: 30px;"></i>
-          <p style="font-size: 32px;">Tin tức</p>
-        </div>
-        <div class="mt-8">
-          <div class="flex justify-center">
-            <div class="grid grid-rows-2 grid-flow-col gap-4 justify-items-center">
-              <a href="./chiTietNha.html" class="row-span-3 col-span-5">
-                <img src="./img/nhaCoOngKhoi.png" alt="">
-                <p class="mt-4">Making a Housing Wage: Where Teachers, First Responders and Restaurant Workers Can Live
-                  Where They Work</p>
-                <div class="flex flex-row">
-                  <p class="text-xanhLaDam" style="font-size: 16px; margin-right: 8px;">Xã hội</p>
-                  <p class="font-normal" style="font-size: 16px; margin-right: 8px;">Hoàng Nhật Minh</p>
-                  <p class="font-normal opacity-50" style="font-size: 16px;">24/02/2020</p>
-                </div>
-                <p class="font-normal opacity-50" style="font-size: 16px;">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit diam at feugiat purus, interdum porta
-                  sed. Ac ut hendrerit enim et scelerisque nullam lorem. Libero mi velit id vitae...</p>
-                </p>
-              </a>
-              <div class="col-span-4">
-                <img src="./img/vongXoay.png" alt="">
-                <p class="mt-4">Making a Housing Wage: Where Teachers, First Responders and Restaurant Workers Can Live
-                  Where They Work</p>
-                <div class="flex flex-row">
-                  <p class="text-xanhLaDam" style="font-size: 16px; margin-right: 8px;">Xã hội</p>
-                  <p class="font-normal" style="font-size: 16px; margin-right: 8px;">Hoàng Nhật Minh</p>
-                  <p class="font-normal opacity-50" style="font-size: 16px;">24/02/2020</p>
-                </div>
-              </div>
-              <div class="col-span-4">
-                <img src="./img/nhieuHinhTron.png" alt="">
-                <p class="mt-4">Making a Housing Wage: Where Teachers, First Responders and Restaurant Workers Can Live
-                  Where They Work</p>
-                <div class="flex flex-row">
-                  <p class="text-xanhLaDam" style="font-size: 16px; margin-right: 8px;">Xã hội</p>
-                  <p class="font-normal" style="font-size: 16px; margin-right: 8px;">Hoàng Nhật Minh</p>
-                  <p class="font-normal opacity-50" style="font-size: 16px;">24/02/2020</p>
-                </div>
-              </div>
+        <div class="mt-11 flex justify-between">
+            <div class="flex flex-row justify-start arrow-back">
+                <i class="py-1.5 fa-solid fa-less-than"></i>
+                <a href="./index.html" class="ml-6 py-1.5 arrow-back__text">Quay lại</a>
             </div>
-          </div>
+            <div class="flex flex-row justify-end">
+                <p class="py-1.5 text-sm font-normal opacity-70">Chuyên mục</p>
+                <div class="bg-xanhLaDam ml-4 rounded-btn text-white py-1.5 px-9">Xã hội</div>
+            </div>
         </div>
-
-        <div class="mt-8 flex flex-col">
-          <div class="mb-6">
-            <p class="float-left">Video</p>
-            <p class="float-right">Xem tất cả</p>
-          </div>
-
-          <div class="grid grid-rows-2 grid-cols-6 grid-flow-col gap-4">
-            <div class="content__video rounded-3xl bg-contain bg-local bg-no-repeat row-span-2 col-span-4 pl-9 text-white bg-gradient-to-t from-purple-500 to-pink-500"
-              style="background-image: url(./img/videoFake.png); padding-top: 40%; line-height: 27px;">
-              <p>Đi cạnh cao tốc pháp vân cầu rẽ có ổn không</p>
-              <div class="flex flex-row">
-                <p class="font-normal" style="font-size: 12px; margin-right: 8px;">5000 lượt xem</p>
-                <p class="opacity-50 font-normal" style="font-size: 12px;">18/08/2022</p>
-              </div>
-            </div>
-            <div class="row-span-1 col-span-2">
-              <img class="" src="./img/videoFake2.png" alt="" style="width: 100%;">
-              <p>Đi cạnh cao tốc pháp vân cầu rẽ có ổn không</p>
-              <div class="flex flex-row">
-                <p class="font-normal" style="font-size: 12px; margin-right: 8px;">5000 lượt xem</p>
-                <p class="opacity-50 font-normal" style="font-size: 12px;">18/08/2022</p>
-              </div>
-            </div>
-            <div class="row-span-1 col-span-2">
-              <img class="" src="./img/videoFake3.png" alt="" style="width: 100%;">
-              <p>Đi cạnh cao tốc pháp vân cầu rẽ có ổn không</p>
-              <div class="flex flex-row">
-                <p class="font-normal" style="font-size: 12px; margin-right: 8px;">5000 lượt xem</p>
-                <p class="opacity-50 font-normal" style="font-size: 12px;">18/08/2022</p>
-              </div>
-            </div>
-          </div>
+        <div class="mt-16">
+            <p class="text-4xl font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices iaculis est curabitur arcu augue amet. Nisi augue sit euismod </p>
         </div>
-        
+        <div class="mt-3">
+            <div class="flex flex-row flex-start">
+                <p class="text-xanhLaDam" style="font-size: 16px; margin-right: 8px;">Xã hội</p>
+                <p class="font-normal" style="font-size: 16px; margin-right: 8px;">Hoàng Nhật Minh</p>
+                <p class="font-normal opacity-50" style="font-size: 16px;">24/02/2020</p>
+              </div>
+              <div class="flex flex-row flex-end"></div>
+        </div>
         <div class="mt-14 flex flex-col justify-center">
-            <p class="">Danh sách tin</p>
             <div class="flex flex-row my-8">
                 <div style="width: 80%" class="mr-6">
                   <img src="./img/nhaCoOngKhoi.png" alt="">
