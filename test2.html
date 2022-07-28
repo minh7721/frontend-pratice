@@ -17,7 +17,11 @@
   <div class="container md:w-11/12 lg:w-full mx-auto">
     <!-- Start Header -->
     <div id="header" class="grid grid-cols-3 gap-4 content-center leading-4">
-      <div class="header__left color__text lg:flex">
+
+        <div class="header__menu" id="menu-button">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+      <div id="menu" style="background-color: aqua;" class=" hidden w-full md:flex md:items-center md:w-auto color__text lg:flex">
         <div class="font__text text-sm opacity-50 ml-12">Mua nhà</div>
         <div class="font__text text-sm opacity-50 ml-12">Thuê nhà</div>
         <div class="font__text text-sm opacity-50 ml-12">Khám phá</div>
@@ -25,9 +29,7 @@
           Blog
         </div>
       </div>
-      <div class="header__menu">
-        <i class="fa-solid fa-bars"></i>
-      </div>
+ 
       <div class="lg:text-center md:text-left color__text font__text font-bold">*Reviewnhà</div>
       <div class="header__right flex md:justify-end md:w-full">
         <div class="icon-heart mr-6">
@@ -326,6 +328,15 @@
     <!--End Footer  -->
   </div>
   <script src="./js/index.js"></script>
+
+  <script>
+       const button = document.querySelector("#menu-button");
+      const menu = document.querySelector("#menu");
+
+      button.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+  </script>
 </body>
 
 </html>

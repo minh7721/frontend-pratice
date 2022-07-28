@@ -34,14 +34,15 @@ img{
 }
 
 #header {
-  /* width: 1920px; */
   height: 75px;
-  /* padding-top: 32px; */
 }
 
-.header__left .underline-offset-8 {
-  text-decoration-color: #d93c23;
+
+
+.header__menu{
+  display: none;
 }
+
 
 .icon-heart {
   margin-top: 6px;
@@ -92,7 +93,37 @@ img{
   font-weight: 600;
 }
 
-
-
+.listVideoMobile{
+  display: none;
+}
 /* Chi tiết nhà */
+
+
+/* Responsive */
+
+@media only screen and (max-width: 1024px ) {
+    .header__left{
+      display: none;
+    }
+
+    .header__menu{
+        display: block;
+    }
+    .btn__dangBai{
+      display: none;
+    }
+    
+
+
+}
+
+@media only screen and (max-width: 768px ){
+  .listVideoMobile{
+    display: block;
+  }
+
+  .listVideo{
+    display: none;
+  }
+}
 
