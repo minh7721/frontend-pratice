@@ -65,14 +65,11 @@
     <!-- Start Content -->
     <div id="content" class="mt-9 flex justify-center">
       <div class="w-7/12">
-        <div class="flex justify-between">
-            <a  class="font-normal py-1.5" href="./index.html">Tất cả</a>
-            <a style="border-radius: 36px" class="bg-xanhLaDam rounded-36px font-normal text-white py-1.5 px-9" href="./xahoi.html">Xã hội</a>
-            <a class="font-normal py-1.5" href="#">Nhà đất</a>
-            <a class="font-normal py-1.5" href="#">Đời sống</a>
-            <a class="font-normal py-1.5" href="./video.html">Video</a>
+        <div class="flex justify-center mt-11">
+            <i class="fa-solid fa-square-rss text-xanhLaDam" style="font-size: 40px; margin-right: 30px;"></i>
+            <p style="font-size: 32px;">#Covid19</p>
           </div>
-        
+
         <div class="mt-14 flex flex-col justify-center">
             <div class="flex flex-row my-8">
                 <div style="width: 80%" class="mr-6">
@@ -149,7 +146,7 @@
 
       <div class="mt-20">
           <div class="flex justify-center">
-            <button class="border-4 border-black border rounded-36px" style="width:200px; height: 50px;">Xem thêm</button>
+            <button class="border-4 border-black border rounded-3xl" style="width:200px; height: 50px;">Xem thêm</button>
           </div>
       </div>
         </div>
