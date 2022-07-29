@@ -19,20 +19,20 @@ tailwind.config = {
         'large': '12px',
       },
       screens: {
-        'sm': '375px',
-        // => @media (min-width: 640px) { ... }
+        'sm': {'min': '375px', 'max': '767px'},
+        // => @media (min-width: 375px and max-width: 767px) { ... }
   
         'md': '768px',
-        // => @media (min-width: 768px) { ... }
-  
-        'lg': '1024px',
-        // => @media (min-width: 1024px) { ... }
-  
-        'xl': '1280px',
-        // => @media (min-width: 1280px) { ... }
-  
-        '2xl': '1536px',
-        // => @media (min-width: 1536px) { ... }
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'xl': '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
       }
   },
 };
@@ -41,17 +41,17 @@ tailwind.config = {
 const btn = document.querySelector("button.mobile-menu-button");
 const menu = document.querySelector(".mobile-menu");
 const btnCloseHeader = document.getElementById('btnCloseHeader');
-const text__reviewNha = document.getElementById('text__reviewNha');
+// const text__reviewNha = document.getElementById('text__reviewNha');
 btn.addEventListener("click", () => {
 if (btn.style.display === "none") {
 btn.style.display = "block";
 btnCloseHeader.style.display = "none";
-text__reviewNha.style.display = "block";
+// text__reviewNha.style.display = "block";
 menu.classList.toggle("hidden");
 } else {
 btn.style.display = "none";
 btnCloseHeader.style.display = "block";
-text__reviewNha.style.display = "none";
+// text__reviewNha.style.display = "none";
 menu.classList.toggle("hidden");
 }
 });
@@ -60,12 +60,12 @@ btnCloseHeader.addEventListener("click", () => {
 if (btnCloseHeader.style.display === "none") {
 btn.style.display = "none";
 btnCloseHeader.style.display = "block";
-text__reviewNha.style.display = "none";
+// text__reviewNha.style.display = "none";
 menu.classList.toggle("hidden");
 } else {
 btn.style.display = "block";
 btnCloseHeader.style.display = "none";
-text__reviewNha.style.display = "block";
+// text__reviewNha.style.display = "block";
 menu.classList.toggle("hidden");
 }
 });
