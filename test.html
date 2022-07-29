@@ -1,88 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Review Nhà</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
 
-  <body>
-    <!-- <svg
-      xmlns="http://www.w3.org/2000/svg"
-      id="menu-button"
-      class="h-6 w-6 cursor-pointer md:hidden block"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-    <path
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="2"
-    d="M4 6h16M4 12h16M4 18h16"
-  />
-    </svg> -->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Review Nhà</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
 
-    <div class="header__menu" id="menu-button">
-        <i class="fa-solid fa-bars"></i>
-      </div>
-    <div style="background-color: aqua;" class="hidden w-full md:flex md:items-center md:w-auto" id="menu">
-        <div class="font__text text-sm opacity-50 ml-12">Mua nhà</div>
-        <div class="font__text text-sm opacity-50 ml-12">Thuê nhà</div>
-        <div class="font__text text-sm opacity-50 ml-12">Khám phá</div>
-        <div class="font__text text-sm ml-12 shrink underline decoration-1 underline-offset-8">
-          Blog
+<body>
+  <!-- Navbar goes here -->
+  <nav class="bg-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between">
+        <div class="md:hidden flex items-center">
+          <i id="btnCloseHeader" class="hidden fa-solid fa-xmark flex items-center py-4 px-2"></i>
+          <button class="outline-none mobile-menu-button">
+            <svg class=" w-6 h-6 text-xanhLaDam hover:text-mauDo " x-show="!showMenu" fill="none" stroke-linecap="round"
+              stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
         </div>
+        <div class="flex space-x-7">
+          <div>
+            <!-- Website Logo -->
 
-      <!-- <ul
-        class="pt-4 text-base text-gray-700 md:flex md:justify-between md:pt-0"
-      >
-        <li>
-          <a class="md:p-4 py-2 block hover:text-purple-400" href="#"
-            >Features</a
-          >
-        </li>
-        <li>
-          <a class="md:p-4 py-2 block hover:text-purple-400" href="#"
-            >Pricing</a
-          >
-        </li>
-        <li>
-          <a class="md:p-4 py-2 block hover:text-purple-400" href="#"
-            >Customers</a
-          >
-        </li>
-        <li>
-          <a class="md:p-4 py-2 block hover:text-purple-400" href="#">Blog</a>
-        </li>
-        <li>
-          <a
-            class="md:p-4 py-2 block hover:text-purple-400 text-purple-500"
-            href="#"
-            >Sign Up</a
-          >
-        </li>
-      </ul> -->
+          </div>
+          <!-- Primary Navbar items -->
+          <div class="hidden md:flex items-center space-x-1">
+            <a href="" class="font__text text-sm opacity-50 py-4 px-2 border-b-4 border-mauDo font-semibold">Mua nhà</a>
+            <a href=""
+              class="font__text text-sm opacity-50 py-4 px-2 font-semibold hover:text-mauDo transition duration-300">Thuê
+              nhà</a>
+            <a href=""
+              class="font__text text-sm opacity-50 py-4 px-2 font-semibold hover:text-mauDo transition duration-300">Khám
+              phá</a>
+            <a href=""
+              class="font__text text-sm opacity-50 py-4 px-2 font-semibold hover:text-mauDo transition duration-300">Blog</a>
+          </div>
+        </div>
+        <!-- Secondary Navbar items -->
+        <div class="hidden md:flex items-center space-x-3 ">
+          <a href=""
+            class="py-2 px-2 font-medium text-xanhLaDam rounded hover:bg-mauDo hover:text-white transition duration-300">Log
+            In</a>
+          <a href=""
+            class="py-2 px-2 font-medium text-white bg-mauDo rounded hover:bg-green-400 transition duration-300">Sign
+            Up</a>
+        </div>
+        <!-- Mobile menu button -->
+       
+      </div>
     </div>
+    <!-- mobile menu -->
+    <div class="hidden mobile-menu">
+      <ul class="">
+        <li class="active"><a href="#" class="block text-sm px-2 py-4 hover:text-mauDo font-semibold">Mua nhà</a>
+        </li>
+        <li><a href="#" class="block text-sm px-2 py-4 hover:text-mauDo transition duration-300">Thuê
+            nhà</a></li>
+        <li><a href="#" class="block text-sm px-2 py-4 hover:text-mauDo transition duration-300">Khám
+            phá</a></li>
+        <li><a href="#" class="block text-sm px-2 py-4 hover:text-mauDo transition duration-300">Blog</a>
+        </li>
+        <li>
+          <a href=""
+            class="py-2 px-2 font-medium text-xanhLaDam rounded hover:bg-mauDo hover:text-white transition duration-300">Log
+            In</a>
+            <a href=""
+              class="py-2 px-2 font-medium text-white bg-mauDo rounded hover:bg-green-400 transition duration-300">Sign
+              Up</a>
+        </li>
+      </ul>
 
-    <script src="./js/index.js"></script>
-    <script>
-      const button = document.querySelector("#menu-button");
-      const menu = document.querySelector("#menu");
+    </div>
+  </nav>
+  </div>
 
-      button.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-      });
-    </script>
-  </body>
+  <script src="./js/index.js"></script>
+</body>
+
 </html>
