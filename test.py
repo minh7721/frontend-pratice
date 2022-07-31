@@ -1,103 +1,126 @@
-from __future__ import division, print_function, unicode_literals
+from __future__ import print_function 
 import numpy as np 
-import matplotlib.pyplot as plt
-import pandas as pd
-
-import tkinter as tk
-from tkinter import *
-from tkinter import messagebox
-
-master=tk.Tk()
-master.title("Dự đoán giá Biệt thự")
-tk.Label(master, text="Nhập các thông tin dưới đây", fg='blue').grid (column=0, row=0)
-
-tk.Label (master, text="Nhập Số Tầng(tầng) :", fg='blue').grid (column=0, row=1)
-s1 = Entry(master,width=70)
-s1.grid(column=1, row=1)
-tk.Label (master, text="Nhập Diện Tích(m2) :", fg='blue').grid (column=0, row=2)
-s2 = Entry(master,width=70)
-s2.grid(column=1, row=2)
-tk.Label (master, text="Nhập Số Mét Mặt Tiền(m) :", fg='blue').grid (column=0, row=3)
-s3 = Entry(master,width=70)
-s3.grid(column=1, row=3)
-tk.Label (master, text="Nhập Giá Thực Tế (đ):", fg='blue').grid (column=0, row=4)
-s4 = Entry(master,width=70)
-s4.grid(column=1, row=4)
-
-##### truyền dữ liệu ######
-b_x= 'DuLieu.txt'
-b_y= 'Gia.txt'
-data=pd.read_csv(b_x,sep='\t')
-label=pd.read_csv(b_y,sep='\t')
-print(type(data))
-print("-----------------")
-X = data.values
-print(X)
-print("-----------------")
-print(label)
-print("-----------------")
-X = data.values
-Y = label.values
-print(X.shape)
-print("-----------------")
-print(Y.shape)
-print("-----------------")
-
-one = np.ones((X.shape[0], 1))
-Xbar = np.concatenate((one, X), axis = 1)
-
-A = np.dot(Xbar.T, Xbar)
-b = np.dot(Xbar.T, Y)
-w = np.dot(np.linalg.pinv(A), b)
-print ('w=',w)
-print("-----------------")
-
-w_0 = w[0][0]
-w_1 = w[1][0]
-w_2 = w[2][0]
-w_3 = w[3][0]
-
-def predict():
-	b1=float(s1.get())
-	b2=float(s2.get())
-	b3=float(s3.get())
-	b4=float(s4.get())
-	y_0 = w_0 + w_1 * b1 + w_2 * b2 + w_3 * b3
-	e = (1/2)*1.0*(pow(b4 - y_0,2))
-	messagebox.showinfo("Giá phần mềm: ",y_0)
-	messagebox.showinfo("Sai số: ",e)
-
-### Test dữ liệu ###
-test_x= 'DuLieuTest.txt'
-test_y= 'GiaDuLieuTest.txt'
-data_test=pd.read_csv(test_x,sep='\t')
-label_test=pd.read_csv(test_y,sep='\t')
-X_test = data_test.values
-Y_test = label_test.values
-print(X_test.shape)
-print("-----------------")
-print("Dữ liệu test: ")
-print(X_test)
-print("-----------------")
-print("Kết quả test: ")
-print("-----------------")
-for test in range(20):
-        y_0 = w_0 + w_1 * X_test[test][0] + w_2 * X_test[test][1] + w_3 * X_test[test][2]
-        print(str(test+1) + " : " + str(y_0))
+import pandas as pd 
 
 
-print("Giá Thực Tế:")
-for gia in range(20):
-        print(str(gia+1) + " : " + str(Y_test[gia]))
-tk.Button(master,  text='Enter', command=predict).grid(row=5, 
-                                                       column=1, 
-                                                       sticky=tk.W, 
-                                                       pady=5)
+class TreeNode(object):
+    def __init__(self, ids = None, children = [], entropy = 0, depth = 0):
+        self.ids = ids           # index of data in this node
+        self.entropy = entropy   # entropy, will fill later
+        self.depth = depth       # distance to root node
+        self.split_attribute = None # which attribute is chosen, it non-leaf
+        self.children = children # list of its child nodes
+        self.order = None       # order of values of split_attribute in children
+        self.label = None       # label of node if it is a leaf
 
-#master.mainloop()
-#x1 = float(input("Nhập số Tầng: "))
-#x2 = float(input("nhập diện tích: "))
-#x3 = float(input("Nhập số mặt tiền: "))
+    def set_properties(self, split_attribute, order):
+        self.split_attribute = split_attribute
+        self.order = order
 
-#giadudoan =  w_3*x3 + w_2*x2 + w_1*x1 + w_0
-#print(  u'giabietthududoan: %.2f' %(giadudoan))
+    def set_label(self, label):
+        self.label = label
+
+
+def entropy(freq):
+    # remove prob 0 
+    freq_0 = freq[np.array(freq).nonzero()[0]]
+    prob_0 = freq_0/float(freq_0.sum())
+    return -np.sum(prob_0*np.log(prob_0))
+
+class DecisionTreeID3(object):
+    def __init__(self, max_depth= 10, min_samples_split = 2, min_gain = 1e-4):
+        self.root = None
+        self.max_depth = max_depth 
+        self.min_samples_split = min_samples_split 
+        self.Ntrain = 0
+        self.min_gain = min_gain
+    
+    def fit(self, data, target):
+        self.Ntrain = data.count()[0]
+        self.data = data 
+        self.attributes = list(data)
+        self.target = target 
+        self.labels = target.unique()
+        
+        ids = range(self.Ntrain)
+        self.root = TreeNode(ids = ids, entropy = self._entropy(ids), depth = 0)
+        queue = [self.root]
+        while queue:
+            node = queue.pop()
+            if node.depth < self.max_depth or node.entropy < self.min_gain:
+                node.children = self._split(node)
+                if not node.children: #leaf node
+                    self._set_label(node)
+                queue += node.children
+            else:
+                self._set_label(node)
+                
+    def _entropy(self, ids):
+        # calculate entropy of a node with index ids
+        if len(ids) == 0: return 0
+        ids = [i+1 for i in ids] # panda series index starts from 1
+        freq = np.array(self.target[ids].value_counts())
+        return entropy(freq)
+
+    def _set_label(self, node):
+        # find label for a node if it is a leaf
+        # simply chose by major voting 
+        target_ids = [i + 1 for i in node.ids]  # target is a series variable
+        node.set_label(self.target[target_ids].mode()[0]) # most frequent label
+    
+    def _split(self, node):
+        ids = node.ids 
+        best_gain = 0
+        best_splits = []
+        best_attribute = None
+        order = None
+        sub_data = self.data.iloc[ids, :]
+        for i, att in enumerate(self.attributes):
+            values = self.data.iloc[ids, i].unique().tolist()
+            if len(values) == 1: continue # entropy = 0
+            splits = []
+            for val in values: 
+                sub_ids = sub_data.index[sub_data[att] == val].tolist()
+                splits.append([sub_id-1 for sub_id in sub_ids])
+            # don't split if a node has too small number of points
+            if min(map(len, splits)) < self.min_samples_split: continue
+            # information gain
+            HxS= 0
+            for split in splits:
+                HxS += len(split)*self._entropy(split)/len(ids)
+            gain = node.entropy - HxS 
+            if gain < self.min_gain: continue # stop if small gain 
+            if gain > best_gain:
+                best_gain = gain 
+                best_splits = splits
+                best_attribute = att
+                order = values
+        node.set_properties(best_attribute, order)
+        child_nodes = [TreeNode(ids = split,
+                     entropy = self._entropy(split), depth = node.depth + 1) for split in best_splits]
+        return child_nodes
+
+    def predict(self, new_data):
+        """
+        :param new_data: a new dataframe, each row is a datapoint
+        :return: predicted labels for each row
+        """
+        npoints = new_data.count()[0]
+        labels = [None]*npoints
+        for n in range(npoints):
+            x = new_data.iloc[n, :] # one point 
+            # start from root and recursively travel if not meet a leaf 
+            node = self.root
+            while node.children: 
+                node = node.children[node.order.index(x[node.split_attribute])]
+            labels[n] = node.label
+            
+        return labels
+
+if __name__ == "__main__":
+    df = pd.read_csv('weather.csv', index_col = 0, parse_dates = True)
+    X = df.iloc[:, :-1]
+    y = df.iloc[:, -1]
+    tree = DecisionTreeID3(max_depth = 3, min_samples_split = 2)
+    tree.fit(X, y)
+    print(tree.predict(X))
