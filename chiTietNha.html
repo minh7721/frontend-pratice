@@ -14,31 +14,36 @@
 </head>
 
 <body>
-  <div class="text-mauChu md:w-11/12 lg:w-10/12 w-11/12 mx-auto">
+  <div class="text-mauChu md:w-10/12 w-11/12 mx-auto">
          <!-- Mobile menu -->
-         <div class="hidden mobile-menu float-left w-full pr-9 bg-white absolute">
+         <div class="hidden mobile-menu float-left w-full mb-3">
           <ul class="">
-          <li class="flex"><i id="btnCloseHeader" class="hidden fa-solid fa-xmark flex items-center py-4 px-2"></i> <p class="ml-3 px-2 py-4 text-sm font-bold">Review nhà</p></li>
+            <li class="flex"><i id="btnCloseHeader" class="hidden fa-solid fa-xmark flex items-center py-4 px-2"></i>
+              <p class="ml-3 px-2 py-4 text-sm font-bold">Review nhà</p>
+            </li>
             <li class="active"><a href="#" class="block text-sm px-2 py-4 hover:text-mauDo">Mua nhà</a>
             </li>
             <li><a href="#" class="block text-sm px-2 py-4 hover:text-mauDo transition duration-300">Thuê
                 nhà</a></li>
             <li><a href="#" class="block text-sm px-2 py-4 hover:text-mauDo transition duration-300">Khám
                 phá</a></li>
-            <li><a href="./index.html" class="block text-sm px-2 py-4 hover:text-mauDo transition duration-300">Blog</a>
+            <li><a href="#" class="block text-sm px-2 py-4 hover:text-mauDo transition duration-300">Blog</a>
             </li>
             <li>
               <a href="#"
-                class="pt-3 pb-3 flex justify-center text-sm font-semibold rounded-36px bg-mauDo bg- text-white hover:bg-mauDo hover:text-white transition duration-300">Đăng bài</a>
+                class="pt-3 pb-3 flex justify-center text-sm font-semibold rounded-36px bg-mauDo bg- text-white hover:bg-mauDo hover:text-white transition duration-300">Đăng
+                bài</a>
             </li>
-            <li class="flex mt-9">
+            <li class="flex mt-9 w-full">
               <a class="w-1/2 pt-3 pb-3 flex justify-center text-sm font-semibold" href="#">Đăng nhập</a>
-              <a href="#" class="ml-3 bg-mauChu w-1/2 flex justify-center text-sm text-white pt-3 pb-3 font-semibold rounded-36px">Đăng ký</a>
+              <a href="#"
+                class="ml-3 bg-mauChu w-1/2 flex justify-center text-sm text-white pt-3 pb-3 font-semibold rounded-36px">Đăng
+                ký</a>
             </li>
           </ul>
         </div>
     <!-- Start Header -->
-    <div id="header" class="grid grid-cols-3 gap-4 content-center leading-4">
+    <div id="header" class="grid lg:grid-cols-3 grid-cols-2 gap-4 content-center leading-4">
       <div class="lg:hidden flex items-center w-8">
         <button class="outline-none mobile-menu-button">
           <svg class=" w-6 h-6 text-xanhLaDam hover:text-mauDo " x-show="!showMenu" fill="none" stroke-linecap="round"
@@ -51,20 +56,20 @@
         <div class="font__text text-sm opacity-50 ml-10">Mua nhà</div>
         <div class="font__text text-sm opacity-50 ml-10">Thuê nhà</div>
         <div class="font__text text-sm opacity-50 ml-10">Khám phá</div>
-        <a href="./index.html" class="font__text text-sm ml-10 shrink underline decoration-1 underline-offset-8">
+        <div class="font__text text-sm text-mauDo ml-10 shrink underline decoration-1 underline-offset-8">
           Blog
-        </a>
+        </div>
       </div>
-      <div id="text__reviewNha" class="lg:text-center md:text-left color__text font__text font-bold">*Reviewnhà</div>
-      <div class="flex header__right flex-row justify-end w-full">
-        <div class="icon-heart mr-6">
+      <div class="hidden lg:block lg:text-center md:text-left color__text font__text font-bold">*Reviewnhà</div>
+      <div class="navbar-right flex justify-end header__right flex-row md:w-full">
+        <div class="icon-heart md:mr-6 sm:mr-1">
           <i class="fa-solid fa-heart-circle-check"></i>
         </div>
         <button
           class="btn__dangBai mr-6 text-sm font-semibold pt-2 pb-2 pl-6 pr-6 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
           Đăng bài
         </button>
-        <div class="profile flex justify-end">
+        <div class="profile flex">
           <div class="hidden lg:block profile-name">
             <div class="profile-name__name">Hoang Nhat Minh</div>
             <div class="profile-name__job opacity-50 text-xs float-right font-normal">
@@ -82,40 +87,42 @@
 
     <!-- Start Content -->
     <div id="content" class="mt-9 flex justify-center">
-      <div class="lg:w-8/12">
+      <div class="lg:w-9/12 sm:w-full">
         <div class="mt-11 flex justify-between">
-            <div class="flex flex-row arrow-back">
+            <a href="./index.html" class="flex flex-row arrow-back">
                 <i class="py-1.5 fa-solid fa-less-than"></i>
-                <a href="./index.html" class="ml-6 py-1.5 arrow-back__text">Quay lại</a>
-            </div>
+                <p class="ml-6 py-1.5 arrow-back__text">Quay lại</p>
+            </a>
             <div class="flex flex-row ">
                 <p class="hidden md:block py-1.5 text-sm font-normal opacity-70">Chuyên mục</p>
                 <div class="bg-xanhLaDam ml-4 rounded-36px text-white py-1.5 px-9">Xã hội</div>
             </div>
         </div>
         <div class="mt-16">
-            <p class="text-4xl font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices iaculis est curabitur arcu augue amet. Nisi augue sit euismod </p>
+            <p class="text-3xl font-bold tight1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices iaculis est curabitur arcu augue amet. Nisi augue sit euismod </p>
         </div>
         <div class="mt-3 md:flex justify-between">
             <div class="flex flex-row">
-                <p class="text-xanhLaDam text-base mr-2">Xã hội •</p>
-                <p class="font-normal text-base mr-2">Hoàng Nhật Minh •</p>
-                <p class="font-normal opacity-50 text-base">24/02/2020</p>
+                <p class="text-xanhLaDam font-semibold text-base text-[14px] tracking-spaceChu">Xã hội</p>
+                <p class="mx-2">•</p>
+                <p class="font-normal text-base text-[14px] tracking-spaceChu">Hoàng Nhật Minh</p>
+                <p class="mx-2">•</p>
+                <p class="font-normal opacity-50 text-base text-[14px] tracking-spaceChu">24/02/2020</p>
               </div>
               <div class="columns-3 md:mt-0 mt-3">
-                    <div class="text-white rounded-36px flex items-center justify-center py-1.5 px-9 mr-2" style="background-color: #ccc;">
+                    <div class="text-white rounded-36px flex items-center justify-center py-1.5 px-6 mr-2" style="background-color: #ccc;">
                       <i class="fa-solid fa-envelope"></i>
-                        <p class="ml-2 hidden lg:block">Gửi mail</p>
+                        <p class="ml-2 hidden lg:block font-normal text-base text-sm">Gửi mail</p>
                     </div>
 
-                    <div class="text-white rounded-36px flex items-center justify-center py-1.5 px-9 mr-2" style="background-color: #395185;">
+                    <div class="text-white rounded-36px flex items-center justify-center py-1.5 px-6 mr-2" style="background-color: #395185;">
                       <i class="fa-brands fa-facebook"></i>
-                        <p class="ml-2 hidden lg:block">Chia sẻ</p>
+                        <p class="ml-2 hidden lg:block font-normal text-base text-sm">Chia sẻ</p>
                     </div>
 
-                    <div class="rounded-36px flex items-center justify-center py-1.5 px-9 border-2 border-black bg-white">
+                    <div class="rounded-36px flex items-center justify-center py-1.5 px-6 border-2 border-black bg-white">
                       <i class="fa-solid fa-heart-circle-check"></i>
-                        <p class="ml-2 hidden lg:block">Lưu</p>
+                        <p class="ml-2 hidden lg:block font-normal text-base text-sm">Lưu</p>
                     </div>
               </div>
         </div>
@@ -159,48 +166,50 @@ Augue et elit velit malesuada sit egestas et augue volutpat. Sagittis, suspendis
         </div>
         <div class="mt-9 flex flex-row justify-between">
             <div class="flex">
-              <p class="py-1.5 mr-4 ">Tin cùng chuyên mục</p>
-              <div class="bg-xanhLaDam text-white rounded-36px px-9 py-1.5 flex justify-center items-center">Xã hội</div>
+              <p class="py-1.5 mr-4 font-semibold text-sm">Tin cùng chuyên mục</p>
+              <p class="w-24 text-sm bg-xanhLaDam text-white rounded-36px px-6 py-1.5 flex justify-center items-center">Xã hội</p>
             </div>
             <i class="py-1.5 fa-solid fa-greater-than hidden sm:block"></i>
               <a href="#" class="sm:hidden text-sm font-normal text-mauChu">Xem tất cả</a>
         </div>
         <div class="mt-9 flex flex-col justify-center">
-            <div class="flex flex-row my-8">
-                <div style="width: 80%" class="mr-6">
-                  <img class="md:h-56 sm:h-28 w-full" src="./img/nhaCoOngKhoi.png" alt="">
-                </div>
-                <div class="flex flex-col">
-                  <p class="mt-4">Making a Housing Wage: Where Teachers, First Responders and Restaurant Workers Can Live
-                    Where They Work</p>
-                  <div class="flex flex-row">
-                    <p class="text-xanhLaDam text-base mr-2">Xã hội •</p>
-                    <p class="font-normal text-base mr-2">Hoàng Nhật Minh •</p>
-                    <p class="font-normal opacity-50 text-base">24/02/2020</p>
-                  </div>
-                  <p class="font-normal opacity-50 text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit diam at feugiat purus, interdum porta
-                    sed. Ac ut hendrerit enim et scelerisque nullam lorem. Libero mi velit id vitae...</p>
-                  </p>
-                </div>
+          <div class="flex flex-row sm:flex-col my-8">
+            <div class="w-full mr-6">
+              <img class="w-full" src="./img/nhaCoOngKhoi.png" alt="">
             </div>
-            <div class="flex flex-row my-8">
-              <div style="width: 80%" class="mr-6">
-                <img class="md:h-56 sm:h-28 w-full" src="./img/nhieuHinhTron.png" alt="">
+            <div class="flex flex-col w-full">
+              <p class="mt-4 font-semibold text-lg tracking-spaceChu">Making a Housing Wage: Where Teachers, First
+                Responders and Restaurant Workers Can Live
+                Where They Work</p>
+              <div class="flex flex-row text-xs tracking-spaceChu">
+                <p class="text-xanhLaDam mr-2 text-base">Xã hội •</p>
+                <p class="font-normal mr-2 text-base">Hoàng Minh •</p>
+                <p class="font-normal opacity-50 text-base">24/02/2020</p>
               </div>
-              <div class="flex flex-col">
-                <p class="mt-4">Making a Housing Wage: Where Teachers, First Responders and Restaurant Workers Can Live
-                  Where They Work</p>
-                <div class="flex flex-row">
-                  <p class="text-xanhLaDam text-base mr-2">Xã hội •</p>
-                  <p class="font-normal text-base mr-2">Hoàng Nhật Minh •</p>
-                  <p class="font-normal opacity-50 text-base">24/02/2020</p>
-                </div>
-                <p class="font-normal opacity-50 text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit diam at feugiat purus, interdum porta
-                  sed. Ac ut hendrerit enim et scelerisque nullam lorem. Libero mi velit id vitae...</p>
-                </p>
+              <p class="font-normal opacity-50 text-base">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit diam at feugiat purus, interdum porta
+                sed. Ac ut hendrerit enim et scelerisque nullam lorem. Libero mi velit id vitae...</p>
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-row sm:flex-col my-8">
+            <div class="w-full mr-6">
+              <img class=" w-full" src="./img/nhieuHinhTron.png" alt="">
+            </div>
+            <div class="flex flex-col w-full">
+              <p class="mt-4 font-semibold text-lg tracking-spaceChu">Making a Housing Wage: Where Teachers, First
+                Responders and Restaurant Workers Can Live
+                Where They Work</p>
+              <div class="flex flex-row text-xs tracking-spaceChu">
+                <p class="text-xanhLaDam mr-2 text-base">Xã hội •</p>
+                <p class="font-normal mr-2 text-base">Hoàng Minh •</p>
+                <p class="font-normal opacity-50 text-base">24/02/2020</p>
               </div>
+              <p class="font-normal opacity-50 text-base">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit diam at feugiat purus, interdum porta
+                sed. Ac ut hendrerit enim et scelerisque nullam lorem. Libero mi velit id vitae...</p>
+              </p>
+            </div>
           </div>
 
           <div class="mt-9 flex justify-between">
@@ -209,16 +218,17 @@ Augue et elit velit malesuada sit egestas et augue volutpat. Sagittis, suspendis
               <a href="./tinThinhHanh.html" class="sm:hidden opacity-70 font-normal">Xem tất cả</a>
           </div>
 
-          <div class="flex flex-row my-8">
-            <div style="width: 80%" class="mr-6">
-              <img class="md:h-56 sm:h-28 w-full" src="./img/vongXoay.png" alt="">
+          <div class="flex flex-row sm:flex-col my-8">
+            <div class="w-full mr-6">
+              <img class="w-full" src="./img/nhaCoOngKhoi.png" alt="">
             </div>
-            <div class="flex flex-col">
-              <p class="mt-4">Making a Housing Wage: Where Teachers, First Responders and Restaurant Workers Can Live
+            <div class="flex flex-col w-full">
+              <p class="mt-4 font-semibold text-lg tracking-spaceChu">Making a Housing Wage: Where Teachers, First
+                Responders and Restaurant Workers Can Live
                 Where They Work</p>
-              <div class="flex flex-row">
-                <p class="text-xanhLaDam text-base mr-2">Xã hội •</p>
-                <p class="font-normal text-base mr-2">Hoàng Nhật Minh •</p>
+              <div class="flex flex-row text-xs tracking-spaceChu">
+                <p class="text-xanhLaDam mr-2 text-base">Xã hội •</p>
+                <p class="font-normal mr-2 text-base">Hoàng Minh •</p>
                 <p class="font-normal opacity-50 text-base">24/02/2020</p>
               </div>
               <p class="font-normal opacity-50 text-base">
@@ -226,25 +236,26 @@ Augue et elit velit malesuada sit egestas et augue volutpat. Sagittis, suspendis
                 sed. Ac ut hendrerit enim et scelerisque nullam lorem. Libero mi velit id vitae...</p>
               </p>
             </div>
-        </div>
-        <div class="flex flex-row my-8">
-          <div style="width: 80%" class="mr-6">
-            <img class="md:h-56 sm:h-28 w-full" src="./img/avatar.jpg" alt="">
           </div>
-          <div class="flex flex-col">
-            <p class="mt-4">Making a Housing Wage: Where Teachers, First Responders and Restaurant Workers Can Live
-              Where They Work</p>
-            <div class="flex flex-row">
-              <p class="text-xanhLaDam text-base mr-2">Xã hội •</p>
-              <p class="font-normal text-base mr-2">Hoàng Nhật Minh •</p>
-              <p class="font-normal opacity-50 text-base">24/02/2020</p>
+          <div class="flex flex-row sm:flex-col my-8">
+            <div class="w-full mr-6">
+              <img class=" w-full" src="./img/nhieuHinhTron.png" alt="">
             </div>
-            <p class="font-normal opacity-50 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit diam at feugiat purus, interdum porta
-              sed. Ac ut hendrerit enim et scelerisque nullam lorem. Libero mi velit id vitae...</p>
-            </p>
+            <div class="flex flex-col w-full">
+              <p class="mt-4 font-semibold text-lg tracking-spaceChu">Making a Housing Wage: Where Teachers, First
+                Responders and Restaurant Workers Can Live
+                Where They Work</p>
+              <div class="flex flex-row text-xs tracking-spaceChu">
+                <p class="text-xanhLaDam mr-2 text-base">Xã hội •</p>
+                <p class="font-normal mr-2 text-base">Hoàng Minh •</p>
+                <p class="font-normal opacity-50 text-base">24/02/2020</p>
+              </div>
+              <p class="font-normal opacity-50 text-base">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit diam at feugiat purus, interdum porta
+                sed. Ac ut hendrerit enim et scelerisque nullam lorem. Libero mi velit id vitae...</p>
+              </p>
+            </div>
           </div>
-      </div>
 
         </div>
       </div>

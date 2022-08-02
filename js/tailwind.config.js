@@ -9,6 +9,7 @@ tailwind.config = {
       },
       borderRadius: {
           '36px' : '36px',
+          '24px' : '24px',
           'none': '0',
           'sm': '0.125rem',
           DEFAULT: '0.25rem',
@@ -35,6 +36,7 @@ tailwind.config = {
         // => @media (min-width: 1536px) { ... }
         },
         letterSpacing: {
+          tight1: '-0.01em',
           tightest: '-.075em',
           tighter: '-.05em',
           tight: '-.025em',
