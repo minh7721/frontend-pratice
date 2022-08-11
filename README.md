@@ -7,7 +7,7 @@ Link đề bài: https://www.figma.com/file/OqoskP3WsOjZYsIaXsqdm0/ReviewNha?nod
 
 
 Cách sử dụng kết quả:
-+ Download code và run code tại đường dẫn https://github.com/minh7721/frontend-pratice.git hoặc truy cập website https://minh7721.github.io/frontend-pratice/ hoặc minhhn77.xyz
++ Download code và run code tại đường dẫn https://github.com/minh7721/frontend-pratice.git hoặc truy cập website https://minh7721.github.io/frontend-pratice/ hoặc http://minhhn77.xyz/
 
 Kiến thức đã nắm được: 
 + Sử dụng Tailwind CSS
